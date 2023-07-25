@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicacion Web</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>KYJ</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.html"><strong>Home</strong></a></li>
+                <li><a href="Labiales.html"><strong>Labial</strong></a></li>
+                <li><a href="Pestanas.html"><strong>Máscara de Pestañas</strong></a></li>
+                <li><a href="Sombras.html"><strong>Paletas de Sombras</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Bienvenido a Maquillaje KYJ</h2>
+            <p>Registrate para explorar nuestra selección de productos de maquillaje de alta calidad. ¡Siéntete bella y radiante!</p>
+            <form id="registroUsuarioForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" required>
+
+                <button type="submit">Registrar Usuario</button>
+            </form>
+            <ul id="listaUsuarios"></ul>
+        </section>
+    </main>
+
+    <!-- Modal de edición de usuario -->
+    <div id="modalEditarUsuario" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalEditarUsuario()">&times;</span>
+            <h3>Editar Usuario</h3>
+            <form id="formularioEditarUsuario" onsubmit="event.preventDefault(); guardarCambiosUsuario()">
+                <label for="nombreEditar">Nombre:</label>
+                <input type="text" id="nombreEditar" required>
+
+                <label for="correoEditar">Correo Electrónico:</label>
+                <input type="email" id="correoEditar" required>
+
+                <label for="contrasenaEditar">Contraseña:</label>
+                <input type="password" id="contrasenaEditar" required>
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación de eliminación de usuario -->
+    <div id="modalConfirmacionEliminarUsuario" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalConfirmacionEliminarUsuario()">&times;</span>
+            <h3>Confirmar Eliminación</h3>
+            <p>¿Estás seguro de que deseas eliminar este usuario?</p>
+            <div>
+                <button id="confirmarEliminarUsuario">Eliminar</button>
+                <button onclick="cerrarModalConfirmacionEliminarUsuario()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

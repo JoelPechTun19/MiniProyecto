@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicacion Web</title>
+    <link rel="stylesheet" type="text/css" href="styles4.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html"><strong>Home</strong></a></li>
+                <li><a href="Labiales.html"><strong>Labial</strong></a></li>
+                <li><a href="Pestanas.html"><strong>Máscara de Pestañas</strong></a></li>
+                <li><a href="Sombras.html"><strong>Paletas de Sombras</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Sombras">
+            <form id="agregarSombrasForm">
+                <label for="Marca">Marca:</label>
+                <input type="text" id="Marca" required>
+
+                <label for="Tono">Tono:</label>
+                <input type="text" id="Tono" required>
+
+
+                <button type="submit">Agregar Sombra</button>
+            </form>
+            <ul id="listaSombras"></ul>
+        </section>
+    </main>
+
+
+    <div id="modalEditarSombras" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalEditarSombras()">&times;</span>
+            <h3>Editar</h3>
+            <form id="formularioEditarSombras" onsubmit="event.preventDefault(); guardarCambiosSombras()">
+                <label for="MarcaEditar">Marca:</label>
+                <input type="text" id="MarcaEditar" required>
+
+                <label for="TonoEditar">Tono:</label>
+                <textarea id="TonoEditar" required></textarea>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="modalConfirmacionEliminarSombras" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalConfirmacionEliminarSombras()">&times;</span>
+            <h3>Confirmar Eliminación</h3>
+            <p>¿Estás seguro de que deseas eliminar este producto?</p>
+            <div>
+                <button id="confirmarEliminarSombras">Eliminar</button>
+                <button onclick="cerrarModalConfirmacionEliminarSombras()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script4.js"></script>
+</body>
+</html>

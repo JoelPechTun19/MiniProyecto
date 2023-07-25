@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplicacion Web</title>
+    <link rel="stylesheet" type="text/css" href="styles3.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html"><strong>Home</strong></a></li>
+                <li><a href="Labiales.html"><strong>Labial</strong></a></li>
+                <li><a href="Pestanas.html"><strong>Máscara de Pestañas</strong></a></li>
+                <li><a href="Sombras.html"><strong>Paletas de Sombras</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Pestañas">
+            <form id="agregarPestañasForm">
+                <label for="Marca">Marca:</label>
+                <input type="text" id="Marca" required>
+
+                <label for="Color">Color:</label>
+                <input type="text" id="Color" required>
+
+
+                <button type="submit">Agregar Máscara</button>
+            </form>
+            <ul id="listaPestañas"></ul>
+        </section>
+    </main>
+
+    
+    <div id="modalEditarPestañas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalEditarPestañas()">&times;</span>
+            <h3>Editar</h3>
+            <form id="formularioEditarPestañas" onsubmit="event.preventDefault(); guardarCambiosPestañas()">
+                <label for="MarcaEditar">Marca:</label>
+                <input type="text" id="MarcaEditar" required>
+
+                <label for="ColorEditar">Color:</label>
+                <textarea id="ColorEditar" required></textarea>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="modalConfirmacionEliminarPestañas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalConfirmacionEliminarPestañas()">&times;</span>
+            <h3>Confirmar Eliminación</h3>
+            <p>¿Estás seguro de que deseas eliminar este producto?</p>
+            <div>
+                <button id="confirmarEliminarPestañas">Eliminar</button>
+                <button onclick="cerrarModalConfirmacionEliminarPestañas()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+</body>
+</html>

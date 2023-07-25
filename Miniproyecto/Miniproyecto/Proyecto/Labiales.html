@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicacion Web</title>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html"><strong>Home</strong></a></li>
+                <li><a href="Labiales.html"><strong>Labial</strong></a></li>
+                <li><a href="Pestanas.html"><strong>Máscara de Pestañas</strong></a></li>
+                <li><a href="Sombras.html"><strong>Paletas de Sombras</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Labiales">
+            <form id="agregarlabial">
+                <label for="Marca">Marca:</label>
+                <input type="text" id="Marca" required>
+
+                <label for="tono">Tono:</label>
+                <input type="text" id="tono" required>
+
+                <button type="submit">Agregar</button>
+            </form>
+            <ul id="listaLabiales"></ul>
+        </section>
+    </main>
+
+    
+    <div id="modalEditarLabial" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalEditarLabial()">&times;</span>
+            <h3>Editar Labial</h3>
+            <form id="formularioEditarLabial" onsubmit="event.preventDefault(); guardarCambiosLabial()">
+                <label for="MarcaEditar">Marca:</label>
+                <input type="text" id="MarcaEditar" required>
+
+                <label for="tonoEditar">Tono:</label>
+                <input type="text" id="tonoEditar" required>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="modalConfirmacionEliminarLabial" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalConfirmacionEliminarLabial()">&times;</span>
+            <h3>Confirmar Eliminación</h3>
+            <p>¿Estás seguro de que deseas eliminar este labial?</p>
+            <div>
+                <button id="confirmarEliminarLabial">Eliminar</button>
+                <button onclick="cerrarModalConfirmacionEliminarLabial()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
